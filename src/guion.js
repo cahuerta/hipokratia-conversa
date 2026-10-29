@@ -1,11 +1,15 @@
-// guion.js — quién habla, qué dice y qué sale en la pantalla del set.
-// Video de HypokratIA para dar a conocer y vender el sistema, contado por sus asistentes.
-//   Primero a los PACIENTES (Portal HypokratIA, Aprende, y su médico que los escucha);
-//   después a los CENTROS DE SALUD (Gestión, dictado, reservas, Dossier, domicilio).
-//   El Instituto de Cirugía Articular y Familia Vital aparecen como centros que ya lo usan.
+// guion.js — quién habla, qué dice y qué sale en la pantalla del set. Un guion por marca:
+//
+// HypokratIA (conoce.hipokratia.health): dar a conocer y vender el sistema, contado por sus
+//   asistentes. Primero a los PACIENTES (Portal HypokratIA, Aprende, su médico que los escucha);
+//   después a los CENTROS (Gestión, dictado, reservas, Dossier, domicilio). ICA y Familia Vital
+//   aparecen como centros que ya lo usan.
+// ICA (conoce.icarticular.cl): el Instituto de Cirugía Articular y sus pacientes. Sin domicilio
+//   (ICA no lo hace). Cierra con que el instituto usa el software de HypokratIA.
 // Las direcciones web se dicen "punto" para la voz; en el subtítulo van escritas normal.
+import { esICA } from "./marca.js";
 
-export const GUION = [
+const GUION_HIPOKRATIA = [
   { quien: "ica", pantalla: "marca", texto: "¡Hola! Somos Ica, Ipo, Sophia y Katia, los asistentes de HypokratIA. Tenemos algo para ti, seas paciente o tengas un centro de salud." },
 
   // ── Pacientes ──
@@ -29,10 +33,28 @@ export const GUION = [
   { quien: "ica", pantalla: "final", texto: "Pacientes: pidan su Portal en portal punto hipokratia punto health. Centros de salud: pidan una demostración en hipokratia punto health." },
 ];
 
+const GUION_ICA = [
+  { quien: "ica", pantalla: "marca", texto: "¡Hola! Te damos la bienvenida al Instituto de Cirugía Articular. Somos Ica, Ipo, Sophia y Katia, y te acompañamos desde antes de tu consulta." },
+  { quien: "ica", pantalla: "especialidades", texto: "Te atendemos en traumatología general y en sus subespecialidades, en kinesiología y en preparación física. Y muy pronto abrimos nuestro nuevo centro." },
+  { quien: "ipo", pantalla: "dolor", texto: "¿Te duele la rodilla, la cadera o el hombro? Cuéntame. Marcamos juntos dónde te duele y te propongo los exámenes que corresponden." },
+  { quien: "ipo", pantalla: "orden", texto: "Un médico del instituto revisa y firma tu orden, y llegas a tu consulta con todo listo." },
+  { quien: "ica", pantalla: "reservas", texto: "Y yo te busco hora con el especialista indicado, a cualquier hora del día, en reservas punto icarticular punto cl." },
+  { quien: "sophia", pantalla: "aprende", texto: "¿Quieres entender lo que tienes? Te explico en simple lo que dicen los mejores estudios científicos." },
+  { quien: "ica", pantalla: "escucha", texto: "En la consulta, tu médico te escucha a ti. Nosotros escribimos las notas clínicas, la receta y la orden de exámenes." },
+  { quien: "ipo", pantalla: "escucha", texto: "Tu doctor se dedica a ti: más tiempo escuchándote, menos tiempo escribiendo." },
+  { quien: "katia", pantalla: "portal", texto: "Y después te llevas tu ficha en el bolsillo, con el Portal del paciente: tus atenciones explicadas en palabras simples." },
+  { quien: "katia", pantalla: "recordatorios", texto: "Te recuerdo tus medicamentos, tus horas y tus sesiones de kinesiología, y puedes sumar a tu familia como cuidadora." },
+  { quien: "sophia", pantalla: "software", texto: "Todo esto es posible porque en el instituto usamos el software de HypokratIA." },
+  { quien: "ica", pantalla: "final", texto: "Agenda tu hora en reservas punto icarticular punto cl. ¡Te esperamos!" },
+];
+
+export const GUION = esICA ? GUION_ICA : GUION_HIPOKRATIA;
+
 export const enPantalla = (t) =>
   t
     .replace("portal punto hipokratia punto health", "portal.hipokratia.health")
     .replace("hipokratia punto health", "hipokratia.health")
+    .replace("reservas punto icarticular punto cl", "reservas.icarticular.cl")
     .replace("las veinticuatro horas", "las 24 horas");
 
 /** Al tocar un avatar en el carrusel, la escena parte en su primera frase */

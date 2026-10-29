@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import Escena, { AVATARES, ORDEN } from "./Escena.jsx";
 import { GUION, inicioDe } from "./guion.js";
 import { precargar } from "./voz.js";
+import { FRANJA } from "./marca.js";
 
 // Solo se avisa a los sitios propios
 const PADRES = /^https:\/\/([a-z0-9-]+\.)*(hipokratia\.health|icarticular\.cl)$/;
@@ -64,8 +65,8 @@ export default function Carrusel() {
     <section ref={raiz} className="cv-franja" aria-labelledby="t-asistentes">
       <div className="cv-franja__cabeza">
         <div>
-          <h2 id="t-asistentes">Conoce a nuestros asistentes</h2>
-          <p>Ica, Ipo, Sophia y Katia acompañan a pacientes y equipos. Toca a uno y te cuentan cómo trabajan.</p>
+          <h2 id="t-asistentes">{FRANJA.titulo}</h2>
+          <p>{FRANJA.texto}</p>
         </div>
         <button className="cv-ver" onClick={() => abrir(0)}>
           <span className="cv-ver__largo">▶ Verlos conversar</span><span className="cv-ver__corto">▶ Ver</span>

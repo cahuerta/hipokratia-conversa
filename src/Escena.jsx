@@ -12,11 +12,12 @@ import Pantalla from "./Pantallas.jsx";
 import { GUION, enPantalla } from "./guion.js";
 import { hablar, callarTodo, precargar } from "./voz.js";
 import "./conversa.css";
+import { esICA } from "./marca.js";
 
 const AvatarKatia = (p) => <AvatarAsistente aspecto="katia" nombre="Katia" {...p} />;
 
 export const AVATARES = {
-  ica:    { nombre: "Ica",    rol: "Recepción 24 horas",   frase: "Te busco hora cuando quieras",      Comp: AvatarIca },
+  ica:    { nombre: "Ica",    rol: esICA ? "Recepción ICA" : "Recepción 24 horas", frase: "Te busco hora cuando quieras", Comp: AvatarIca },
   ipo:    { nombre: "Ipo",    rol: "Dolor y exámenes",     frase: "Te ayudo con tu dolor",             Comp: AvatarIpo },
   sophia: { nombre: "Sophia", rol: "Evidencia científica", frase: "Te explico lo que dice la ciencia", Comp: AvatarSophia },
   katia:  { nombre: "Katia",  rol: "Portal del paciente",  frase: "Tu ficha siempre contigo",          Comp: AvatarKatia },

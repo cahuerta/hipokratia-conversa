@@ -290,3 +290,24 @@ body.cv-modo-carrusel { background: transparent; }
 .conversa-set .leyes div { display: grid; gap: 2px; padding: .8em 1em; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(45,212,191,.5); animation: cv-entra .5s backwards; }
 .conversa-set .leyes div:nth-child(2) { animation-delay: .25s; }
 .conversa-set .leyes b { font-size: 1.3em; color: var(--turquesa); } .conversa-set .leyes span { color: var(--gris); font-size: .85em; }
+
+/* ICA: logo en la pantalla, nombre largo y especialidades */
+.conversa-set .pt__logoimg { width: clamp(64px, 13vh, 120px); height: auto; border-radius: 50%; background: #fff; box-shadow: 0 6px 24px rgba(0,0,0,.35); animation: cv-entra .6s backwards; }
+.conversa-set .pt__logo--ica { font-size: clamp(24px, 5.2vh, 52px); }
+.conversa-set .especialidades { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; width: 100%; max-width: 40em; text-align: left; }
+.conversa-set .especialidades div { display: flex; align-items: center; gap: .6em; padding: .65em .9em; border-radius: 12px; background: rgba(255,255,255,.08); border: 1px solid rgba(141,169,255,.35); animation: cv-entra .5s backwards; }
+.conversa-set .especialidades span { font-size: 1.3em; }
+@media (max-aspect-ratio: 4/5) {
+  .conversa-set .pt__logo--ica { font-size: 7vw; }
+  .conversa-set .especialidades { gap: 6px; }
+}
+
+/* Franja del carrusel con los colores de ICA */
+body.cv-marca-ica .cv-franja h2 { color: #0E1A2B; }
+body.cv-marca-ica .cv-franja p { color: #5B6778; }
+body.cv-marca-ica .cv-ver { background: #2F5D8A; }
+body.cv-marca-ica .cv-ver:hover { background: #244a70; }
+body.cv-marca-ica .cv-tarjeta__nombre { color: #0E1A2B; }
+body.cv-marca-ica .cv-tarjeta__rol { color: #5B6778; }
+body.cv-marca-ica .cv-tarjeta__globo { background: #0E1A2B; }
+body.cv-marca-ica .cv-tarjeta__globo::after { border-top-color: #0E1A2B; }

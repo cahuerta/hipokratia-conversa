@@ -1,11 +1,15 @@
 // Pantallas.jsx — lo que muestra la pantalla grande del set en cada momento:
-// maquetas animadas de cada producto (sin datos reales de pacientes).
+// maquetas animadas de cada producto (sin datos reales de pacientes). Según la marca
+// (marca.js) cambian la portada, la reserva, la firma de la orden y el cierre.
+import { esICA, logoInsignia } from "./marca.js";
+
 export default function Pantalla({ id }) {
   switch (id) {
     case "marca":
+      if (esICA) return (<div className="pt pt--marca"><img className="pt__logoimg" src={logoInsignia} alt="" /><p className="pt__logo pt__logo--ica">Instituto de Cirugía Articular</p><p className="pt__lema">Vuelve a moverte sin dolor</p></div>);
       return (<div className="pt pt--marca"><p className="pt__logo">Hypokrat<span>IA</span></p><p className="pt__lema">Tu salud, conectada</p><p className="pt__lugar">Para pacientes y centros de salud</p></div>);
     case "dolor":
-      return (<div className="pt pt--dolor"><p className="pt__titulo">Asistentes HypokratIA · ¿Dónde te duele?</p>
+      return (<div className="pt pt--dolor"><p className="pt__titulo">{esICA ? "Asistentes ICA" : "Asistentes HypokratIA"} · ¿Dónde te duele?</p>
         <svg viewBox="0 0 120 220" className="cuerpo" aria-hidden>
           <circle cx="60" cy="22" r="15" /><rect x="40" y="40" width="40" height="70" rx="16" />
           <rect x="22" y="44" width="14" height="62" rx="7" /><rect x="84" y="44" width="14" height="62" rx="7" />
@@ -15,10 +19,12 @@ export default function Pantalla({ id }) {
         <ul className="pt__chips"><li>Rodilla derecha</li><li>Hace 3 semanas</li><li>Al subir escaleras</li></ul></div>);
     case "orden":
       return (<div className="pt pt--orden"><p className="pt__titulo">Diagnóstico probable</p><p className="pt__grande">Lesión meniscal</p>
-        <div className="orden"><p>Orden de exámenes</p><p className="orden__item">✓ Resonancia magnética de rodilla derecha</p><p className="orden__firma">Firma: médico del centro</p></div></div>);
+        <div className="orden"><p>Orden de exámenes</p><p className="orden__item">✓ Resonancia magnética de rodilla derecha</p><p className="orden__firma">{esICA ? "Firma: médico del Instituto de Cirugía Articular" : "Firma: médico del centro"}</p></div></div>);
     case "reservas":
-      return (<div className="pt pt--reservas"><p className="pt__titulo">Página de reservas de tu centro · 24 horas</p>
-        <div className="modos"><span className="on">🏥 Presencial</span><span>🏠 Domicilio</span><span>📱 Telemedicina</span></div>
+      return (<div className="pt pt--reservas"><p className="pt__titulo">{esICA ? "reservas.icarticular.cl · 24 horas" : "Página de reservas de tu centro · 24 horas"}</p>
+        {esICA
+          ? <div className="modos"><span className="on">🦴 Traumatología</span><span>🏃 Kinesiología</span><span>💪 Preparación física</span></div>
+          : <div className="modos"><span className="on">🏥 Presencial</span><span>🏠 Domicilio</span><span>📱 Telemedicina</span></div>}
         <div className="horas">{["09:00", "09:20", "10:40", "11:00", "15:00", "15:20"].map((h, i) => <span key={h} style={{ animationDelay: `${0.15 * i}s` }} className={i === 2 ? "elegida" : ""}>{h}</span>)}</div>
         <p className="pt__ok">✓ Hora confirmada · recordatorio enviado</p></div>);
     case "aprende":
@@ -34,7 +40,7 @@ export default function Pantalla({ id }) {
         <p className="tel__ev">19 oct · Lumbago mecánico</p><p className="tel__exp">✨ “Tienes una contractura en la zona lumbar. Calor local y reposo relativo.”</p></div></div>);
     case "recordatorios":
       return (<div className="pt pt--portal"><div className="tel"><p className="tel__barra">Portal HypokratIA · Recordatorios</p>
-        <p className="aviso">⏰ 08:00 · Ibuprofeno 400 mg</p><p className="aviso">🗓 Jue 10:40 · Dr. Huerta</p><p className="aviso">💊 Cotizar receta: desde $3.490</p><p className="aviso">👥 Cuidador: tu hija Ana</p></div></div>);
+        <p className="aviso">⏰ 08:00 · Ibuprofeno 400 mg</p><p className="aviso">🗓 Jue 10:40 · Dr. Huerta</p><p className="aviso">💊 Cotizar receta: desde $3.490</p>{esICA && <p className="aviso">🏃 Kine: sesión 4 de 10, mañana 18:00</p>}<p className="aviso">👥 Cuidador: tu hija Ana</p></div></div>);
     case "gestion":
       return (<div className="pt pt--gestion"><p className="pt__titulo">HypokratIA Gestión · Agenda de hoy</p>
         <div className="agenda">{[["09:00", "Control post operatorio"], ["09:20", "Dolor de cadera"], ["09:40", "Lesión de hombro"], ["10:00", "🏠 Kine a domicilio"]].map(([h, t], i) => <p key={h} style={{ animationDelay: `${0.18 * i}s` }}><b>{h}</b>{t}</p>)}</div>
@@ -67,7 +73,14 @@ export default function Pantalla({ id }) {
     case "usado":
       return (<div className="pt pt--usado"><p className="pt__titulo">Ya usan HypokratIA</p>
         <div className="socios"><div><b>Instituto de Cirugía Articular</b><span>Curicó · traumatología</span></div><div><b>Familia Vital</b><span>Atención a domicilio</span></div></div></div>);
+    case "especialidades":
+      return (<div className="pt pt--usado"><p className="pt__titulo">Instituto de Cirugía Articular</p>
+        <div className="especialidades">{[["🦴", "Traumatología general"], ["🎯", "Subespecialidades: cadera, rodilla, hombro…"], ["🏃", "Kinesiología"], ["💪", "Preparación física"]].map(([i, t], k) => <div key={t} style={{ animationDelay: `${0.2 * k}s` }}><span>{i}</span>{t}</div>)}</div>
+        <p className="pt__ok">✨ Muy pronto, nuestro nuevo centro</p></div>);
+    case "software":
+      return (<div className="pt pt--marca"><p className="pt__titulo">El instituto usa</p><p className="pt__logo">Hypokrat<span>IA</span></p><p className="pt__lema">Software clínico</p></div>);
     case "final":
+      if (esICA) return (<div className="pt pt--final"><img className="pt__logoimg" src={logoInsignia} alt="" /><p className="pt__logo pt__logo--ica">Instituto de Cirugía Articular</p><p className="cta">Agenda tu hora en <b>reservas.icarticular.cl</b></p></div>);
       return (<div className="pt pt--final"><p className="pt__logo">Hypokrat<span>IA</span></p><p className="cta">Pacientes: tu Portal en <b>portal.hipokratia.health</b></p><p className="cta">Centros de salud: pide una demostración en <b>hipokratia.health</b></p></div>);
     default:
       return null;

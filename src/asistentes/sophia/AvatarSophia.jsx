@@ -20,8 +20,8 @@
  */
 import { useId } from "react";
 import "../comun/asistentes.css";
-// Insignia del pecho: logo HypokratIA (en ASISTENCIA-ICA es el de ICA)
-import logoInsignia from "../../assets/hipokratia-insignia.png";
+// Insignia del pecho: el logo de la marca del video (HypokratIA o ICA), ver marca.js
+import { logoInsignia } from "../../marca.js";
 
 // Respiración: el cuerpo y la cabeza suben y bajan apenas
 const ESTILO = `
