@@ -37,7 +37,7 @@ const GUION_HIPOKRATIA = [
 
 const GUION_ICA = [
   { quien: "ica", pantalla: "ica-dolor", texto: "¿Te duele la cadera o la rodilla y ya no puedes hacer lo que te gusta? En el Instituto de Cirugía Articular te ayudamos a volver a moverte sin dolor." },
-  { quien: "ipo", pantalla: "ica-equipo", texto: "Te atienden traumatólogos dedicados a las articulaciones: el doctor Cristóbal Huerta, especialista en cadera y pelvis, y el doctor Jaime Espinoza, especialista en cadera y rodilla. También vemos traumatología general." },
+  { quien: "ipo", pantalla: "ica-equipo", texto: "Te atienden traumatólogos subespecialistas: el doctor Cristóbal Huerta, subespecialista en cadera y pelvis, y el doctor Jaime Espinoza, subespecialista en rodilla. También vemos traumatología general." },
   { quien: "ipo", pantalla: "ica-consulta", texto: "Te escuchan, te examinan con calma y te explican tus opciones. No siempre hay que operar: muchas veces el tratamiento es sin cirugía." },
   { quien: "sophia", pantalla: "ica-mako", texto: "Y cuando la cirugía es lo mejor, operamos en convenio con Clínica CleverSalud de Rancagua, con la última tecnología: cirugía robótica Mako, de Stryker, para prótesis de cadera y de rodilla." },
   { quien: "sophia", pantalla: "ica-tratamientos", texto: "También tratamos ligamentos, meniscos y cirugía de revisión, siempre según la mejor evidencia." },

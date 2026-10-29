@@ -81,7 +81,7 @@ export default function Pantalla({ id }) {
         <p className="pt__lugar">Instituto de Cirugía Articular</p></div>);
     case "ica-equipo":
       return (<div className="pt pt--usado"><p className="pt__titulo">Nuestro equipo</p>
-        <div className="equipo">{[["CH", "Dr. Cristóbal Huerta Cortés", "Traumatólogo · Cadera y pelvis"], ["JE", "Dr. Jaime Espinoza", "Traumatólogo · Cadera y rodilla"], ["GC", "Gabriel Castillo", "Kinesiólogo"]].map(([ini, n, r], k) => (
+        <div className="equipo">{[["CH", "Dr. Cristóbal Huerta Cortés", "Traumatólogo · Subespecialista en cadera y pelvis"], ["JE", "Dr. Jaime Espinoza", "Traumatólogo · Subespecialista en rodilla"], ["GC", "Gabriel Castillo", "Kinesiólogo"]].map(([ini, n, r], k) => (
           <div key={n} style={{ animationDelay: `${0.25 * k}s` }}><span className="equipo__ini">{ini}</span><b>{n}</b><span>{r}</span></div>))}</div>
         <p className="pt__lugar">Y traumatología general</p></div>);
     case "ica-consulta":
