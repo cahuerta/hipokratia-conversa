@@ -45,6 +45,10 @@ export default function Pantalla({ id }) {
         <p className="pt__grande">Llega en 12 min · código 4821</p></div>);
     case "conectado":
       return (<div className="pt pt--red">{["Tu centro", "Portal", "Aprende", "Dossier", "Asistentes"].map((n, i) => <span key={n} className={`nodo n${i}`}>{n}</span>)}<span className="nodo nodo--centro">🔒 Tu paciente</span></div>);
+    case "ley":
+      return (<div className="pt pt--ley"><p className="pt__titulo">🔒 Datos protegidos</p>
+        <div className="leyes"><div><b>Ley 21.719</b><span>Protección de datos personales</span></div><div><b>Ley 20.584</b><span>Derechos y deberes del paciente</span></div></div>
+        <div className="escribe"><span>✓ Solo los ve quien el paciente autoriza</span><span style={{ animationDelay: ".5s" }}>✓ Cada acceso queda registrado</span></div></div>);
     case "escucha":
       // El médico mira al paciente; el sistema escribe por él
       return (<div className="pt pt--escucha"><p className="pt__titulo">En la consulta</p>

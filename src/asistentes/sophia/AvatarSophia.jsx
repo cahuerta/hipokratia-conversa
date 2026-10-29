@@ -20,7 +20,8 @@
  */
 import { useId } from "react";
 import "../comun/asistentes.css";
-import logoICA from "../../assets/ica.jpg";
+// Insignia del pecho: logo HypokratIA (en ASISTENCIA-ICA es el de ICA)
+import logoInsignia from "../../assets/hipokratia-insignia.png";
 
 // Respiración: el cuerpo y la cabeza suben y bajan apenas
 const ESTILO = `
@@ -262,7 +263,7 @@ export default function AvatarSophia({ estado = "reposo", boca = 0 }) {
       <g filter={u("sombraIns")}>
         <circle cx="340" cy="346" r="45" fill="#ffffff"/>
         <circle cx="340" cy="346" r="40" fill="#191d20"/>
-        <g clipPath={u("insignia")}><image href={logoICA} x="301" y="307" width="74" height="74"/></g>
+        <g clipPath={u("insignia")}><image href={logoInsignia} x="301" y="307" width="74" height="74"/></g>
         <circle cx="340" cy="346" r="40" fill="none" stroke="#2fa39a" strokeWidth="1.5"/>
       </g>
 

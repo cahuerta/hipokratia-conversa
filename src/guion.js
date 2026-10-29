@@ -22,7 +22,8 @@ export const GUION = [
   { quien: "ica", pantalla: "reservas", texto: "Tu centro tiene su propia página de reservas, y yo atiendo a tus pacientes las veinticuatro horas: les busco hora, se la confirmo y se la recuerdo. Menos horas perdidas." },
   { quien: "sophia", pantalla: "dossier", texto: "Para tus médicos está HypokratIA Dossier: la evidencia científica analizada y resumida, para decidir con datos reales." },
   { quien: "ipo", pantalla: "domicilio", texto: "¿Atiendes a domicilio? Familia Vital lo hace con HypokratIA: sus pacientes reservan y pagan en línea, y siguen al profesional en el mapa hasta que llega." },
-  { quien: "katia", pantalla: "conectado", texto: "Y tus pacientes reciben el Portal: tu centro queda en su teléfono, con sus datos protegidos y visibles solo para quien ellos autorizan." },
+  { quien: "katia", pantalla: "conectado", texto: "Y tus pacientes reciben el Portal: tu centro queda en su teléfono." },
+  { quien: "katia", pantalla: "ley", texto: "Y sus datos están protegidos. HypokratIA cumple la Ley de Protección de Datos Personales y la Ley de Derechos del Paciente: solo los ve quien el paciente autoriza, y cada acceso queda registrado." },
   { quien: "sophia", pantalla: "usado", texto: "El Instituto de Cirugía Articular, en Curicó, ya trabaja así todos los días." },
 
   { quien: "ica", pantalla: "final", texto: "Pacientes: pidan su Portal en portal punto hipokratia punto health. Centros de salud: pidan una demostración en hipokratia punto health." },

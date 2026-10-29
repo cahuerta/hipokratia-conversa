@@ -285,3 +285,8 @@ body.cv-modo-carrusel { background: transparent; }
 .conversa-set .socios div { display: grid; gap: 4px; padding: 1em; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(141,169,255,.35); animation: cv-entra .5s backwards; }
 .conversa-set .socios div:nth-child(2) { animation-delay: .3s; }
 .conversa-set .socios b { font-size: 1.15em; } .conversa-set .socios span { color: var(--gris); font-size: .85em; }
+.conversa-set .pt--ley { justify-items: center; text-align: center; }
+.conversa-set .leyes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 36em; }
+.conversa-set .leyes div { display: grid; gap: 2px; padding: .8em 1em; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(45,212,191,.5); animation: cv-entra .5s backwards; }
+.conversa-set .leyes div:nth-child(2) { animation-delay: .25s; }
+.conversa-set .leyes b { font-size: 1.3em; color: var(--turquesa); } .conversa-set .leyes span { color: var(--gris); font-size: .85em; }
