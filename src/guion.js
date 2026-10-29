@@ -4,8 +4,10 @@
 //   asistentes. Primero a los PACIENTES (Portal HypokratIA, Aprende, su médico que los escucha);
 //   después a los CENTROS (Gestión, dictado, reservas, Dossier, domicilio). ICA y Familia Vital
 //   aparecen como centros que ya lo usan.
-// ICA (conoce.icarticular.cl): el Instituto de Cirugía Articular y sus pacientes. Sin domicilio
-//   (ICA no lo hace). Cierra con que el instituto usa el software de HypokratIA.
+// ICA (conoce.icarticular.cl): para PACIENTES, centrado en la atención: el equipo (Dr. Huerta,
+//   Dr. Espinoza, kinesiólogo Gabriel Castillo), tratamiento con y sin cirugía, cirugía robótica
+//   Mako (Stryker) en convenio con Clínica CleverSalud Rancagua, kinesiología y preparación
+//   física, Fonasa e Isapres, nuevo centro pronto. Sin domicilio. HypokratIA solo al pie del cierre.
 // Las direcciones web se dicen "punto" para la voz; en el subtítulo van escritas normal.
 import { esICA } from "./marca.js";
 
@@ -34,18 +36,17 @@ const GUION_HIPOKRATIA = [
 ];
 
 const GUION_ICA = [
-  { quien: "ica", pantalla: "marca", texto: "¡Hola! Te damos la bienvenida al Instituto de Cirugía Articular. Somos Ica, Ipo, Sophia y Katia, y te acompañamos desde antes de tu consulta." },
-  { quien: "ica", pantalla: "especialidades", texto: "Te atendemos en traumatología general y en sus subespecialidades, en kinesiología y en preparación física. Y muy pronto abrimos nuestro nuevo centro." },
-  { quien: "ipo", pantalla: "dolor", texto: "¿Te duele la rodilla, la cadera o el hombro? Cuéntame. Marcamos juntos dónde te duele y te propongo los exámenes que corresponden." },
-  { quien: "ipo", pantalla: "orden", texto: "Un médico del instituto revisa y firma tu orden, y llegas a tu consulta con todo listo." },
-  { quien: "ica", pantalla: "reservas", texto: "Y yo te busco hora con el especialista indicado, a cualquier hora del día, en reservas punto icarticular punto cl." },
-  { quien: "sophia", pantalla: "aprende", texto: "¿Quieres entender lo que tienes? Te explico en simple lo que dicen los mejores estudios científicos." },
-  { quien: "ica", pantalla: "escucha", texto: "En la consulta, tu médico te escucha a ti. Nosotros escribimos las notas clínicas, la receta y la orden de exámenes." },
-  { quien: "ipo", pantalla: "escucha", texto: "Tu doctor se dedica a ti: más tiempo escuchándote, menos tiempo escribiendo." },
-  { quien: "katia", pantalla: "portal", texto: "Y después te llevas tu ficha en el bolsillo, con el Portal del paciente: tus atenciones explicadas en palabras simples." },
-  { quien: "katia", pantalla: "recordatorios", texto: "Te recuerdo tus medicamentos, tus horas y tus sesiones de kinesiología, y puedes sumar a tu familia como cuidadora." },
-  { quien: "sophia", pantalla: "software", texto: "Todo esto es posible porque en el instituto usamos el software de HypokratIA." },
-  { quien: "ica", pantalla: "final", texto: "Agenda tu hora en reservas punto icarticular punto cl. ¡Te esperamos!" },
+  { quien: "ica", pantalla: "ica-dolor", texto: "¿Te duele la cadera o la rodilla y ya no puedes hacer lo que te gusta? En el Instituto de Cirugía Articular te ayudamos a volver a moverte sin dolor." },
+  { quien: "ipo", pantalla: "ica-equipo", texto: "Te atienden traumatólogos dedicados a las articulaciones: el doctor Cristóbal Huerta, especialista en cadera y pelvis, y el doctor Jaime Espinoza, especialista en cadera y rodilla. También vemos traumatología general." },
+  { quien: "ipo", pantalla: "ica-consulta", texto: "Te escuchan, te examinan con calma y te explican tus opciones. No siempre hay que operar: muchas veces el tratamiento es sin cirugía." },
+  { quien: "sophia", pantalla: "ica-mako", texto: "Y cuando la cirugía es lo mejor, operamos en convenio con Clínica CleverSalud de Rancagua, con la última tecnología: cirugía robótica Mako, de Stryker, para prótesis de cadera y de rodilla." },
+  { quien: "sophia", pantalla: "ica-tratamientos", texto: "También tratamos ligamentos, meniscos y cirugía de revisión, siempre según la mejor evidencia." },
+  { quien: "katia", pantalla: "ica-kine", texto: "La recuperación es tan importante como la operación. Gabriel Castillo, nuestro kinesiólogo, te acompaña desde el primer día hasta que vuelves a caminar, a trabajar o a tu deporte." },
+  { quien: "katia", pantalla: "ica-preparacion", texto: "Y con preparación física llegas fuerte a tu cirugía y te cuidas para no volver a lesionarte." },
+  { quien: "ica", pantalla: "ica-camino", texto: "El mismo equipo te acompaña del diagnóstico a la recuperación. Nunca estás solo." },
+  { quien: "ica", pantalla: "ica-prevision", texto: "Atendemos pacientes Fonasa e Isapres. Y muy pronto abrimos nuestro nuevo centro." },
+  { quien: "ipo", pantalla: "ica-dudas", texto: "¿Tienes una duda o no sabes qué examen necesitas? Pregúntanos a cualquier hora." },
+  { quien: "ica", pantalla: "final", texto: "Agenda tu hora en reservas punto icarticular punto cl. ¡Vuelve a moverte sin dolor!" },
 ];
 
 export const GUION = esICA ? GUION_ICA : GUION_HIPOKRATIA;

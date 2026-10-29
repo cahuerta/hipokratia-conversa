@@ -311,3 +311,39 @@ body.cv-marca-ica .cv-tarjeta__nombre { color: #0E1A2B; }
 body.cv-marca-ica .cv-tarjeta__rol { color: #5B6778; }
 body.cv-marca-ica .cv-tarjeta__globo { background: #0E1A2B; }
 body.cv-marca-ica .cv-tarjeta__globo::after { border-top-color: #0E1A2B; }
+
+/* ── Video de ICA: atención al paciente ── */
+.conversa-set .pt__logo--ica span { color: var(--turquesa); }
+.conversa-set .pt__chip-lugar { margin: 0; padding: .45em 1em; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(141,169,255,.45); animation: cv-entra .5s .5s backwards; }
+.conversa-set .pt__pie { margin: .6em 0 0; font-size: .75em; color: var(--gris); letter-spacing: .06em; }
+.conversa-set .pt__pie span { color: var(--turquesa); }
+.conversa-set .equipo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: 100%; }
+.conversa-set .equipo div { display: grid; justify-items: center; gap: 4px; padding: .9em .6em; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(141,169,255,.35); animation: cv-entra .5s backwards; text-align: center; }
+.conversa-set .equipo__ini { width: 2.6em; height: 2.6em; border-radius: 50%; display: grid; place-items: center; font-weight: 800; background: linear-gradient(135deg, var(--acero), var(--turquesa)); color: #fff; }
+.conversa-set .equipo b { font-size: .95em; line-height: 1.2; } .conversa-set .equipo span:last-child { color: var(--gris); font-size: .78em; }
+.conversa-set .pasos3 { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.conversa-set .pasos3 span { padding: .6em 1em; border-radius: 14px; background: rgba(255,255,255,.1); border: 1px solid rgba(45,212,191,.5); animation: cv-entra .5s backwards; font-weight: 600; }
+.conversa-set .camino { display: flex; align-items: center; gap: 0; width: 100%; max-width: 46em; }
+.conversa-set .camino span { flex: 1; position: relative; text-align: center; padding: .7em .3em; border-radius: 12px; background: rgba(255,255,255,.08); border: 1px solid rgba(45,212,191,.45); font-weight: 600; animation: cv-entra .5s backwards; }
+.conversa-set .camino span + span { margin-left: 1.4em; }
+.conversa-set .camino span + span::before { content: "→"; position: absolute; left: -1.15em; top: 50%; transform: translateY(-50%); color: var(--turquesa); }
+.conversa-set .globos { display: grid; gap: 8px; width: 100%; max-width: 30em; }
+.conversa-set .globos p { margin: 0; padding: .6em .9em; border-radius: 14px; max-width: 85%; animation: cv-entra .5s backwards; }
+.conversa-set .globos__p { justify-self: end; background: var(--blanco); color: #0E1B3D; border-bottom-right-radius: 4px; }
+.conversa-set .globos__r { justify-self: start; background: var(--turquesa); color: #04201C; font-weight: 600; border-bottom-left-radius: 4px; animation-delay: .6s !important; }
+@media (max-aspect-ratio: 4/5) {
+  .conversa-set .equipo { gap: 6px; }
+  .conversa-set .equipo div { padding: .6em .3em; }
+  .conversa-set .camino span { font-size: .85em; padding: .55em .2em; }
+  .conversa-set .camino span + span { margin-left: 1.1em; }
+}
+
+/* Colores mezclados ICA + HypokratIA en el set del video de ICA: azul acero del
+   instituto con las luces turquesa de HypokratIA */
+body.cv-marca-ica .conversa-set { --acero: #2F5D8A; --estudio: #10284A; --noche: #071426; --azul: #2F5D8A; --luz: #A9C4E4;
+  background: radial-gradient(120% 80% at 50% 0%, #2F5D8A 0%, var(--estudio) 45%, var(--noche) 100%); }
+body.cv-marca-ica .cv-luces i:nth-child(1) { background: #2F5D8A; }
+body.cv-marca-ica .cv-luces i:nth-child(2) { background: #02A5AC; }
+body.cv-marca-ica .cv-luces i:nth-child(3) { background: #4FC3C9; opacity: .25; }
+body.cv-marca-ica .cv-pantalla { background: linear-gradient(160deg, rgba(47,93,138,.88), rgba(7,20,38,.94)); border-color: rgba(79,195,201,.45); }
+.conversa-set { --acero: #2F5D8A; }

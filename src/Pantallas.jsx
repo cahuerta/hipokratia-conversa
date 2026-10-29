@@ -73,6 +73,49 @@ export default function Pantalla({ id }) {
     case "usado":
       return (<div className="pt pt--usado"><p className="pt__titulo">Ya usan HypokratIA</p>
         <div className="socios"><div><b>Instituto de Cirugía Articular</b><span>Curicó · traumatología</span></div><div><b>Familia Vital</b><span>Atención a domicilio</span></div></div></div>);
+    // ── Video de ICA (pacientes): la atención ──
+    case "ica-dolor":
+      return (<div className="pt pt--marca"><img className="pt__logoimg" src={logoInsignia} alt="" />
+        <p className="pt__pregunta">¿Te duele la cadera o la rodilla?</p>
+        <p className="pt__logo pt__logo--ica">Vuelve a moverte <span>sin dolor</span></p>
+        <p className="pt__lugar">Instituto de Cirugía Articular</p></div>);
+    case "ica-equipo":
+      return (<div className="pt pt--usado"><p className="pt__titulo">Nuestro equipo</p>
+        <div className="equipo">{[["CH", "Dr. Cristóbal Huerta Cortés", "Traumatólogo · Cadera y pelvis"], ["JE", "Dr. Jaime Espinoza", "Traumatólogo · Cadera y rodilla"], ["GC", "Gabriel Castillo", "Kinesiólogo"]].map(([ini, n, r], k) => (
+          <div key={n} style={{ animationDelay: `${0.25 * k}s` }}><span className="equipo__ini">{ini}</span><b>{n}</b><span>{r}</span></div>))}</div>
+        <p className="pt__lugar">Y traumatología general</p></div>);
+    case "ica-consulta":
+      return (<div className="pt pt--escucha"><p className="pt__titulo">En tu consulta</p>
+        <div className="pasos3">{["👂 Te escuchamos", "🩺 Te examinamos con calma", "💬 Te explicamos tus opciones"].map((t, k) => <span key={t} style={{ animationDelay: `${0.35 * k}s` }}>{t}</span>)}</div>
+        <p className="pt__grande">No siempre hay que operar</p></div>);
+    case "ica-mako":
+      return (<div className="pt pt--marca"><p className="pt__titulo">Cirugía de última tecnología</p>
+        <p className="pt__logo pt__logo--ica">Cirugía robótica <span>Mako</span></p>
+        <p className="pt__lema">Stryker · Prótesis de cadera y de rodilla</p>
+        <p className="pt__chip-lugar">🏥 En convenio con Clínica CleverSalud · Rancagua</p></div>);
+    case "ica-tratamientos":
+      return (<div className="pt pt--usado"><p className="pt__titulo">También tratamos</p>
+        <div className="escribe">{["Ligamentos", "Meniscos", "Cirugía de revisión", "Choque femoroacetabular", "Traumatología general"].map((t, k) => <span key={t} style={{ animationDelay: `${0.2 * k}s` }}>{t}</span>)}</div>
+        <p className="pt__lema">Siempre según la mejor evidencia</p></div>);
+    case "ica-kine":
+      return (<div className="pt pt--usado"><p className="pt__titulo">Kinesiología · Gabriel Castillo</p>
+        <div className="camino">{["Día 1", "Caminar", "Trabajar", "Tu deporte"].map((t, k) => <span key={t} style={{ animationDelay: `${0.3 * k}s` }}>{t}</span>)}</div>
+        <p className="pt__lema">Te acompañamos en toda tu recuperación</p></div>);
+    case "ica-preparacion":
+      return (<div className="pt pt--escucha"><p className="pt__titulo">Preparación física</p>
+        <div className="pasos3"><span>💪 Llega fuerte a tu cirugía</span><span style={{ animationDelay: ".35s" }}>🛡️ Evita nuevas lesiones</span></div></div>);
+    case "ica-camino":
+      return (<div className="pt pt--usado"><p className="pt__titulo">Un mismo equipo contigo</p>
+        <div className="camino">{["Diagnóstico", "Tratamiento", "Recuperación", "Vuelta al deporte"].map((t, k) => <span key={t} style={{ animationDelay: `${0.3 * k}s` }}>{t}</span>)}</div>
+        <p className="pt__grande">Nunca estás solo</p></div>);
+    case "ica-prevision":
+      return (<div className="pt pt--marca"><p className="pt__titulo">Atendemos</p>
+        <div className="leyes"><div><b>Fonasa</b></div><div><b>Isapres</b></div></div>
+        <p className="pt__ok">✨ Muy pronto, nuestro nuevo centro</p></div>);
+    case "ica-dudas":
+      return (<div className="pt pt--escucha"><p className="pt__titulo">¿Tienes una duda?</p>
+        <div className="globos"><p className="globos__p">¿Qué examen necesito para mi rodilla?</p><p className="globos__r">Cuéntame qué sientes y te ayudo 😊</p></div>
+        <p className="pt__lema">Pregúntanos a cualquier hora</p></div>);
     case "especialidades":
       return (<div className="pt pt--usado"><p className="pt__titulo">Instituto de Cirugía Articular</p>
         <div className="especialidades">{[["🦴", "Traumatología general"], ["🎯", "Subespecialidades: cadera, rodilla, hombro…"], ["🏃", "Kinesiología"], ["💪", "Preparación física"]].map(([i, t], k) => <div key={t} style={{ animationDelay: `${0.2 * k}s` }}><span>{i}</span>{t}</div>)}</div>
@@ -80,7 +123,7 @@ export default function Pantalla({ id }) {
     case "software":
       return (<div className="pt pt--marca"><p className="pt__titulo">El instituto usa</p><p className="pt__logo">Hypokrat<span>IA</span></p><p className="pt__lema">Software clínico</p></div>);
     case "final":
-      if (esICA) return (<div className="pt pt--final"><img className="pt__logoimg" src={logoInsignia} alt="" /><p className="pt__logo pt__logo--ica">Instituto de Cirugía Articular</p><p className="cta">Agenda tu hora en <b>reservas.icarticular.cl</b></p></div>);
+      if (esICA) return (<div className="pt pt--final"><img className="pt__logoimg" src={logoInsignia} alt="" /><p className="pt__logo pt__logo--ica">Instituto de Cirugía Articular</p><p className="cta">Agenda tu hora en <b>reservas.icarticular.cl</b></p><p className="pt__pie">Tecnología Hypokrat<span>IA</span></p></div>);
       return (<div className="pt pt--final"><p className="pt__logo">Hypokrat<span>IA</span></p><p className="cta">Pacientes: tu Portal en <b>portal.hipokratia.health</b></p><p className="cta">Centros de salud: pide una demostración en <b>hipokratia.health</b></p></div>);
     default:
       return null;
