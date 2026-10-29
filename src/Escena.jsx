@@ -16,10 +16,10 @@ import "./conversa.css";
 const AvatarKatia = (p) => <AvatarAsistente aspecto="katia" nombre="Katia" {...p} />;
 
 export const AVATARES = {
-  ica:    { nombre: "Ica",    rol: "Recepción ICA",        frase: "Te busco hora con el especialista", Comp: AvatarIca },
+  ica:    { nombre: "Ica",    rol: "Recepción 24 horas",   frase: "Te busco hora cuando quieras",      Comp: AvatarIca },
   ipo:    { nombre: "Ipo",    rol: "Dolor y exámenes",     frase: "Te ayudo con tu dolor",             Comp: AvatarIpo },
   sophia: { nombre: "Sophia", rol: "Evidencia científica", frase: "Te explico lo que dice la ciencia", Comp: AvatarSophia },
-  katia:  { nombre: "Katia",  rol: "MiSalud",              frase: "Tu ficha siempre contigo",          Comp: AvatarKatia },
+  katia:  { nombre: "Katia",  rol: "Portal del paciente",  frase: "Tu ficha siempre contigo",          Comp: AvatarKatia },
 };
 export const ORDEN = ["ica", "ipo", "sophia", "katia"];
 

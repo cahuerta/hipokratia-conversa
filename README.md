@@ -8,6 +8,6 @@ conoce.hipokratia.health — Ica, Ipo, Sophia y Katia conversan y presentan el e
   Al tocar un avatar, el marco pasa a pantalla completa con la escena.
 
 Voz: Azure, por el backend de los asistentes de ICA (`POST /voz`, acepta *.hipokratia.health).
-Guion en `src/guion.js`; maquetas de la pantalla en `src/Pantallas.jsx`.
+Guion en `src/guion.js` (primero pacientes: Portal y Aprende; después centros: Gestión, dictado, reservas, Dossier, domicilio); maquetas de la pantalla en `src/Pantallas.jsx`.
 
 Vercel: proyecto Vite (build `npm run build`, salida `dist`), dominio conoce.hipokratia.health.

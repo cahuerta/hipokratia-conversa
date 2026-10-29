@@ -268,3 +268,20 @@ body.cv-modo-carrusel { background: transparent; }
   .cv-tarjeta { flex-basis: 38%; }
   .cv-tarjeta__nombre { font-size: 17px; }
 }
+
+/* Pantallas nuevas: escucha, dictado, usado, confirmación de reserva */
+.conversa-set .pt__ok { margin: 0; color: var(--turquesa); font-weight: 700; animation: cv-entra .5s .9s backwards; }
+.conversa-set .pt--escucha, .conversa-set .pt--usado { justify-items: center; text-align: center; }
+.conversa-set .escribe { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.conversa-set .escribe span { padding: .45em .9em; border-radius: 999px; background: rgba(45,212,191,.16); border: 1px solid rgba(45,212,191,.55); animation: cv-entra .5s backwards; }
+.conversa-set .onda { display: flex; align-items: center; gap: 4px; height: 3.2em; }
+.conversa-set .onda i { flex: 1; max-width: 8px; border-radius: 4px; background: var(--turquesa); height: 30%; animation: cv-onda .9s ease-in-out infinite alternate; }
+@keyframes cv-onda { to { height: 100%; } }
+.conversa-set .ficha { background: var(--blanco); color: #0E1B3D; border-radius: 12px; padding: .8em 1em; display: grid; gap: .3em; }
+.conversa-set .ficha p { margin: 0; animation: cv-entra .45s backwards; }
+.conversa-set .ficha p:nth-child(2) { animation-delay: .5s; } .conversa-set .ficha p:nth-child(3) { animation-delay: 1s; }
+.conversa-set .ficha__listo { color: #0F766E; font-weight: 700; animation-delay: 1.5s !important; }
+.conversa-set .socios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 40em; }
+.conversa-set .socios div { display: grid; gap: 4px; padding: 1em; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(141,169,255,.35); animation: cv-entra .5s backwards; }
+.conversa-set .socios div:nth-child(2) { animation-delay: .3s; }
+.conversa-set .socios b { font-size: 1.15em; } .conversa-set .socios span { color: var(--gris); font-size: .85em; }

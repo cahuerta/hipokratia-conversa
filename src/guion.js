@@ -1,25 +1,38 @@
-// conversa/guion.js — quién habla, qué dice y qué sale en la pantalla del set.
+// guion.js — quién habla, qué dice y qué sale en la pantalla del set.
+// Video de HypokratIA para dar a conocer y vender el sistema, contado por sus asistentes.
+//   Primero a los PACIENTES (Portal HypokratIA, Aprende, y su médico que los escucha);
+//   después a los CENTROS DE SALUD (Gestión, dictado, reservas, Dossier, domicilio).
+//   El Instituto de Cirugía Articular y Familia Vital aparecen como centros que ya lo usan.
 // Las direcciones web se dicen "punto" para la voz; en el subtítulo van escritas normal.
 
 export const GUION = [
-  { quien: "ica", pantalla: "marca", texto: "¡Hola! Soy Ica, la recepcionista del Instituto de Cirugía Articular, en Curicó. Les presento a mis compañeros: Ipo, Sophia y Katia. Somos los asistentes de HypokratIA." },
-  { quien: "ipo", pantalla: "dolor", texto: "Yo soy Ipo. Si te duele una rodilla, la cadera o el hombro, te pregunto dónde te duele, desde cuándo y cómo es el dolor, y marcamos juntos los puntos en el cuerpo." },
-  { quien: "ipo", pantalla: "orden", texto: "Con eso te propongo un diagnóstico probable y los exámenes que corresponden. Si quieres, sale tu orden firmada por un médico de ICA." },
-  { quien: "ica", pantalla: "reservas", texto: "Y yo te busco hora con el especialista indicado: presencial, a domicilio o por telemedicina." },
-  { quien: "ipo", pantalla: null, texto: "Sophia, ¿y si el paciente quiere saber más sobre lo que tiene?" },
-  { quien: "sophia", pantalla: "aprende", texto: "Para eso estoy yo. Busco en la literatura científica, en PubMed y SciELO, y te explico en simple lo que dicen los mejores estudios. Eso es HypokratIA Aprende." },
-  { quien: "sophia", pantalla: "dossier", texto: "Y para médicos está HypokratIA Dossier: analiza artículos científicos y resume la evidencia, para decidir con datos reales." },
-  { quien: "katia", pantalla: "portal", texto: "Yo soy Katia, de HypokratIA Portal, la app MiSalud. Ahí tienes tu ficha clínica siempre contigo, explicada en palabras simples." },
-  { quien: "katia", pantalla: "recordatorios", texto: "Te recuerdo tus medicamentos y tus horas, cotizas tu receta entre farmacias, sumas a un familiar como cuidador y autorizas a tu médico a ver tu ficha." },
-  { quien: "ica", pantalla: "gestion", texto: "¿Y de dónde sale toda esa información? De HypokratIA Gestión, la ficha clínica del centro: agenda, atención con dictado, recetas, caja y equipo." },
-  { quien: "ica", pantalla: "domicilio", texto: "También atención a domicilio con seguimiento en el mapa, y cada centro con su propia página de reservas." },
-  { quien: "sophia", pantalla: "catedra", texto: "Y para formar a los futuros médicos, Cátedra Interactiva: clases en vivo donde los alumnos votan y un avatar responde sus preguntas." },
-  { quien: "katia", pantalla: "conectado", texto: "Todo conectado: lo que tu médico registra en la consulta llega a tu Portal, protegido y con tu permiso." },
-  { quien: "ica", pantalla: "final", texto: "Si eres paciente, agenda en reservas punto icarticular punto cl. Y si tienes un centro de salud, conoce HypokratIA en hipokratia punto health. ¡Te esperamos!" },
+  { quien: "ica", pantalla: "marca", texto: "¡Hola! Somos Ica, Ipo, Sophia y Katia, los asistentes de HypokratIA. Tenemos algo para ti, seas paciente o tengas un centro de salud." },
+
+  // ── Pacientes ──
+  { quien: "katia", pantalla: "portal", texto: "Si eres paciente, te presento el Portal HypokratIA: tu ficha clínica siempre contigo, explicada en palabras simples." },
+  { quien: "katia", pantalla: "recordatorios", texto: "Te recuerdo tus medicamentos y tus horas, cotizas tu receta entre farmacias, sumas a tu familia como cuidadora y autorizas a tu médico a ver tu ficha." },
+  { quien: "ipo", pantalla: "dolor", texto: "¿Te duele algo? Conversamos sobre tu dolor, marcas dónde te duele y te propongo los exámenes, con una orden firmada por un médico." },
+  { quien: "sophia", pantalla: "aprende", texto: "Y si quieres entender lo que tienes, te explico en simple lo que dicen los mejores estudios científicos. Eso es HypokratIA Aprende." },
+  { quien: "ica", pantalla: "escucha", texto: "Y en los centros que usan HypokratIA, tu médico te escucha a ti. Nosotros nos encargamos de las notas clínicas, la receta y la orden de exámenes." },
+  { quien: "ipo", pantalla: "escucha", texto: "Tu doctor se dedica a ti: más tiempo escuchándote, menos tiempo escribiendo." },
+
+  // ── Centros de salud ──
+  { quien: "ica", pantalla: "gestion", texto: "¿Tienes un centro de salud? HypokratIA Gestión es todo tu centro en un solo sistema: ficha clínica, agenda, caja, equipo y remuneraciones." },
+  { quien: "ipo", pantalla: "dictado", texto: "Tus médicos dictan la consulta y la ficha se escribe sola. La receta y la orden de exámenes salen listas para firmar. Atienden mejor y terminan a la hora." },
+  { quien: "ica", pantalla: "reservas", texto: "Tu centro tiene su propia página de reservas, y yo atiendo a tus pacientes las veinticuatro horas: les busco hora, se la confirmo y se la recuerdo. Menos horas perdidas." },
+  { quien: "sophia", pantalla: "dossier", texto: "Para tus médicos está HypokratIA Dossier: la evidencia científica analizada y resumida, para decidir con datos reales." },
+  { quien: "ipo", pantalla: "domicilio", texto: "¿Atiendes a domicilio? Familia Vital lo hace con HypokratIA: sus pacientes reservan y pagan en línea, y siguen al profesional en el mapa hasta que llega." },
+  { quien: "katia", pantalla: "conectado", texto: "Y tus pacientes reciben el Portal: tu centro queda en su teléfono, con sus datos protegidos y visibles solo para quien ellos autorizan." },
+  { quien: "sophia", pantalla: "usado", texto: "El Instituto de Cirugía Articular, en Curicó, ya trabaja así todos los días." },
+
+  { quien: "ica", pantalla: "final", texto: "Pacientes: pidan su Portal en portal punto hipokratia punto health. Centros de salud: pidan una demostración en hipokratia punto health." },
 ];
 
 export const enPantalla = (t) =>
-  t.replace("reservas punto icarticular punto cl", "reservas.icarticular.cl").replace("hipokratia punto health", "hipokratia.health");
+  t
+    .replace("portal punto hipokratia punto health", "portal.hipokratia.health")
+    .replace("hipokratia punto health", "hipokratia.health")
+    .replace("las veinticuatro horas", "las 24 horas");
 
 /** Al tocar un avatar en el carrusel, la escena parte en su primera frase */
 export const inicioDe = (quien) => Math.max(0, GUION.findIndex((g) => g.quien === quien));
