@@ -81,7 +81,7 @@ export default function Pantalla({ id }) {
         <p className="pt__lugar">Instituto de Cirugía Articular</p></div>);
     case "ica-equipo":
       return (<div className="pt pt--usado"><p className="pt__titulo">Nuestro equipo</p>
-        <div className="equipo">{[["CH", "Dr. Cristóbal Huerta Cortés", "Traumatólogo · Subespecialista en cadera y pelvis"], ["JE", "Dr. Jaime Espinoza", "Traumatólogo · Subespecialista en rodilla"], ["GC", "Gabriel Castillo", "Kinesiólogo"]].map(([ini, n, r], k) => (
+        <div className="equipo">{[["CH", "Dr. Cristóbal Huerta Cortés", "Traumatólogo · Cadera y pelvis"], ["JE", "Dr. Jaime Espinoza", "Traumatólogo · Rodilla"], ["GC", "Gabriel Castillo", "Kinesiólogo"]].map(([ini, n, r], k) => (
           <div key={n} style={{ animationDelay: `${0.25 * k}s` }}><span className="equipo__ini">{ini}</span><b>{n}</b><span>{r}</span></div>))}</div>
         <p className="pt__lugar">Y traumatología general</p></div>);
     case "ica-consulta":
@@ -92,7 +92,8 @@ export default function Pantalla({ id }) {
       return (<div className="pt pt--marca"><p className="pt__titulo">Cirugía de última tecnología</p>
         <p className="pt__logo pt__logo--ica">Cirugía robótica <span>Mako</span></p>
         <p className="pt__lema">Stryker · Prótesis de cadera y de rodilla</p>
-        <p className="pt__chip-lugar">🏥 En convenio con Clínica CleverSalud · Rancagua</p></div>);
+        <p className="pt__chip-lugar">🏥 Clínica CleverSalud · Rancagua</p>
+        <p className="pt__ok">Cirugías por Fonasa e Isapres, en convenio con la clínica</p></div>);
     case "ica-tratamientos":
       return (<div className="pt pt--usado"><p className="pt__titulo">También tratamos</p>
         <div className="escribe">{["Ligamentos", "Meniscos", "Cirugía de revisión", "Choque femoroacetabular", "Traumatología general"].map((t, k) => <span key={t} style={{ animationDelay: `${0.2 * k}s` }}>{t}</span>)}</div>
@@ -109,9 +110,8 @@ export default function Pantalla({ id }) {
         <div className="camino">{["Diagnóstico", "Tratamiento", "Recuperación", "Vuelta al deporte"].map((t, k) => <span key={t} style={{ animationDelay: `${0.3 * k}s` }}>{t}</span>)}</div>
         <p className="pt__grande">Nunca estás solo</p></div>);
     case "ica-prevision":
-      return (<div className="pt pt--marca"><p className="pt__titulo">Atendemos</p>
-        <div className="leyes"><div><b>Fonasa</b></div><div><b>Isapres</b></div></div>
-        <p className="pt__ok">✨ Muy pronto, nuestro nuevo centro</p></div>);
+      return (<div className="pt pt--marca"><p className="pt__titulo">Muy pronto</p>
+        <p className="pt__grande">✨ Nuestro nuevo centro</p></div>);
     case "ica-dudas":
       return (<div className="pt pt--escucha"><p className="pt__titulo">¿Tienes una duda?</p>
         <div className="globos"><p className="globos__p">¿Qué examen necesito para mi rodilla?</p><p className="globos__r">Cuéntame qué sientes y te ayudo 😊</p></div>

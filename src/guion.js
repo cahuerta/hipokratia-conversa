@@ -7,7 +7,7 @@
 // ICA (conoce.icarticular.cl): para PACIENTES, centrado en la atención: el equipo (Dr. Huerta,
 //   Dr. Espinoza, kinesiólogo Gabriel Castillo), tratamiento con y sin cirugía, cirugía robótica
 //   Mako (Stryker) en convenio con Clínica CleverSalud Rancagua, kinesiología y preparación
-//   física, Fonasa e Isapres, nuevo centro pronto. Sin domicilio. HypokratIA solo al pie del cierre.
+//   física, nuevo centro pronto. Fonasa e Isapres SOLO para cirugías (convenio con la clínica). Sin domicilio. HypokratIA solo al pie del cierre.
 // Las direcciones web se dicen "punto" para la voz; en el subtítulo van escritas normal.
 import { esICA } from "./marca.js";
 
@@ -37,14 +37,14 @@ const GUION_HIPOKRATIA = [
 
 const GUION_ICA = [
   { quien: "ica", pantalla: "ica-dolor", texto: "¿Te duele la cadera o la rodilla y ya no puedes hacer lo que te gusta? En el Instituto de Cirugía Articular te ayudamos a volver a moverte sin dolor." },
-  { quien: "ipo", pantalla: "ica-equipo", texto: "Te atienden traumatólogos subespecialistas: el doctor Cristóbal Huerta, subespecialista en cadera y pelvis, y el doctor Jaime Espinoza, subespecialista en rodilla. También vemos traumatología general." },
+  { quien: "ipo", pantalla: "ica-equipo", texto: "Te atienden traumatólogos subespecialistas: el doctor Cristóbal Huerta, en cadera y pelvis, y el doctor Jaime Espinoza, en rodilla. También vemos traumatología general." },
   { quien: "ipo", pantalla: "ica-consulta", texto: "Te escuchan, te examinan con calma y te explican tus opciones. No siempre hay que operar: muchas veces el tratamiento es sin cirugía." },
-  { quien: "sophia", pantalla: "ica-mako", texto: "Y cuando la cirugía es lo mejor, operamos en convenio con Clínica CleverSalud de Rancagua, con la última tecnología: cirugía robótica Mako, de Stryker, para prótesis de cadera y de rodilla." },
+  { quien: "sophia", pantalla: "ica-mako", texto: "Y cuando la cirugía es lo mejor, operamos en Clínica CleverSalud de Rancagua, con la última tecnología: cirugía robótica Mako, de Stryker, para prótesis de cadera y de rodilla. Tu cirugía puede ser por Fonasa o por tu Isapre, gracias a nuestro convenio con la clínica." },
   { quien: "sophia", pantalla: "ica-tratamientos", texto: "También tratamos ligamentos, meniscos y cirugía de revisión, siempre según la mejor evidencia." },
   { quien: "katia", pantalla: "ica-kine", texto: "La recuperación es tan importante como la operación. Gabriel Castillo, nuestro kinesiólogo, te acompaña desde el primer día hasta que vuelves a caminar, a trabajar o a tu deporte." },
   { quien: "katia", pantalla: "ica-preparacion", texto: "Y con preparación física llegas fuerte a tu cirugía y te cuidas para no volver a lesionarte." },
   { quien: "ica", pantalla: "ica-camino", texto: "El mismo equipo te acompaña del diagnóstico a la recuperación. Nunca estás solo." },
-  { quien: "ica", pantalla: "ica-prevision", texto: "Atendemos pacientes Fonasa e Isapres. Y muy pronto abrimos nuestro nuevo centro." },
+  { quien: "ica", pantalla: "ica-prevision", texto: "Y muy pronto abrimos nuestro nuevo centro." },
   { quien: "ipo", pantalla: "ica-dudas", texto: "¿Tienes una duda o no sabes qué examen necesitas? Pregúntanos a cualquier hora." },
   { quien: "ica", pantalla: "final", texto: "Agenda tu hora en reservas punto icarticular punto cl. ¡Vuelve a moverte sin dolor!" },
 ];
