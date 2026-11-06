@@ -13,6 +13,7 @@ const PROFESIONES = [
   { rol: "enfermera", nombre: "Enfermero/a", tratos: ["E.U."] },
   { rol: "terapeuta", nombre: "Terapeuta ocupacional", tratos: ["T.O."] },
   { rol: "nutricionista", nombre: "Nutricionista", tratos: ["Nut."] },
+  { rol: "fonoaudiologo", nombre: "Fonoaudiólogo/a", tratos: ["Flgo.", "Flga."] },
 ];
 
 async function post(ruta, cuerpo) {
