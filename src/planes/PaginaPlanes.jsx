@@ -144,7 +144,7 @@ export default function PaginaPlanes() {
               <div>
                 <h3>Módulos adicionales <span>a cotizar</span></h3>
                 <ul>
-                  <Check>Atención a domicilio con seguimiento en el mapa</Check>
+                  <Check>Atención a domicilio con seguimiento en el mapa{precios.domicilio_adicional ? ` (Externo Completo: +${pesos(precios.domicilio_adicional)}/mes)` : ""}</Check>
                   <Check>Telemedicina</Check>
                   <Check>Dermatología en línea</Check>
                 </ul>

@@ -35,6 +35,7 @@ export default function Inscripcion() {
     plan: inicial === "externo_base" ? "externo_base" : "externo_completo",
     rol: "medico", trato: "Dr.", nombre: "", apellido: "", rut: "", especialidad: "",
     telefono: "", email: "", codigo: "", calle: "", numero: "", depto: "", comuna: "", acepta: false,
+    domicilio: false, pagoOnline: false,
   });
   const [codigoEnviado, setCodigoEnviado] = useState(false);
   const [enviando, setEnviando] = useState(false);
@@ -51,6 +52,8 @@ export default function Inscripcion() {
   const cambiar = (k) => (e) => setF((x) => ({ ...x, [k]: e.target.type === "checkbox" ? e.target.checked : e.target.value }));
   const profesion = PROFESIONES.find((p) => p.rol === f.rol);
   const completo = f.plan === "externo_completo";
+  const dermato = /dermatolog/i.test(f.especialidad.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+  const total = precios ? precios[f.plan] + (completo && f.domicilio ? precios.domicilio_adicional || 0 : 0) : 0;
 
   function elegirProfesion(e) {
     const p = PROFESIONES.find((x) => x.rol === e.target.value);
@@ -79,7 +82,7 @@ export default function Inscripcion() {
       const d = await post("/api/inscripcion", {
         plan: f.plan, rol: f.rol, trato: f.trato, nombre: f.nombre, apellido: f.apellido, rut: f.rut,
         especialidad: f.especialidad, telefono: f.telefono, email: f.email.trim(), codigo: f.codigo.trim(),
-        acepta_terminos: true,
+        acepta_terminos: true, domicilio: completo && f.domicilio, interes_pago_online: f.pagoOnline,
         direccion: completo ? { calle: f.calle, numero: f.numero, depto: f.depto, comuna: f.comuna } : null,
       });
       setResultado(d);
@@ -170,6 +173,25 @@ export default function Inscripcion() {
                 </label>
               </div>
             )}
+
+            <div className="pl-servicios">
+              <p className="pl-subt">Servicios</p>
+              {completo && (
+                <label className="pl-check">
+                  <input type="checkbox" checked={f.domicilio} onChange={cambiar("domicilio")} />
+                  <span>Atiendo a domicilio{precios?.domicilio_adicional ? <> (<b>+{pesos(precios.domicilio_adicional)}/mes</b>)</> : ""}.
+                    {" "}Tus pacientes podrán pedir atención a domicilio desde tu página.</span>
+                </label>
+              )}
+              {completo && dermato && (
+                <p className="pl-incluido">✓ Dermatología online incluida sin costo (si el registro de prestadores confirma tu especialidad).</p>
+              )}
+              <label className="pl-check">
+                <input type="checkbox" checked={f.pagoOnline} onChange={cambiar("pagoOnline")} />
+                <span>Me interesa que mis pacientes me paguen en línea (aún no disponible: nos ayuda a saber si lo implementamos).</span>
+              </label>
+              {precios && <p className="pl-nota pl-total">Después del mes gratis: <b>{pesos(total)}/mes</b> (IVA incluido).</p>}
+            </div>
 
             <div className="pl-campos">
               <label className="pl-ancho2">Correo

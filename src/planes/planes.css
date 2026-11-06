@@ -132,3 +132,7 @@ body.cv-marca-planes { margin: 0; background: var(--pl-fondo); }
   .pl-planes-elegir, .pl-campos { grid-template-columns: 1fr; }
   .pl-fila { flex-direction: column; }
 }
+.pl-servicios { display: grid; gap: 10px; }
+.pl-servicios .pl-subt { margin: 0; }
+.pl-incluido { margin: 0; padding: 10px 12px; border-radius: 10px; background: #ECFDF5; color: #065F46; font-size: 14px; font-weight: 600; }
+.pl-total { margin: 0; font-size: 14px; color: var(--pl-texto); }
