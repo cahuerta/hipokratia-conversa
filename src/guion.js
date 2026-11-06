@@ -53,6 +53,9 @@ export const GUION = esICA ? GUION_ICA : GUION_HIPOKRATIA;
 
 export const enPantalla = (t) =>
   t
+    .replace("contacto arroba hipokratia punto health", "contacto@hipokratia.health")
+    .replace("planes punto hipokratia punto health", "planes.hipokratia.health")
+    .replace(/(\d{1,3}(?:\.\d{3})+) pesos/g, "$$$1")
     .replace("portal punto hipokratia punto health", "portal.hipokratia.health")
     .replace("hipokratia punto health", "hipokratia.health")
     .replace("reservas punto icarticular punto cl", "reservas.icarticular.cl")

@@ -8,8 +8,8 @@ import AvatarIca from "./asistentes/ica/AvatarIca.jsx";
 import AvatarIpo from "./asistentes/ipo/AvatarIpo.jsx";
 import AvatarSophia from "./asistentes/sophia/AvatarSophia.jsx";
 import AvatarAsistente from "./katia/AvatarAsistente.jsx";
-import Pantalla from "./Pantallas.jsx";
-import { GUION, enPantalla } from "./guion.js";
+import PantallaBase from "./Pantallas.jsx";
+import { GUION as GUION_MARCA, enPantalla } from "./guion.js";
 import { hablar, callarTodo, precargar } from "./voz.js";
 import "./conversa.css";
 import { esICA } from "./marca.js";
@@ -35,7 +35,10 @@ function lugares(activo) {
 
 // esperarInicio: la página propia parte con el botón (el navegador exige un toque para el audio)
 // alCerrar: si viene, hay ✕ y Escape para cerrar
-export default function Escena({ desde = 0, alCerrar, esperarInicio = false }) {
+// guion / Pantalla / datos: otro video con el mismo set (planes.hipokratia.health pasa
+// el guion armado con los precios vigentes y su propia pantalla)
+export default function Escena({ desde = 0, alCerrar, esperarInicio = false, guion = GUION_MARCA, Pantalla = PantallaBase, datos }) {
+  const GUION = guion;
   const [paso, setPaso] = useState(desde);
   const [corriendo, setCorriendo] = useState(!esperarInicio);
   const [empezo, setEmpezo] = useState(!esperarInicio);
@@ -95,7 +98,7 @@ export default function Escena({ desde = 0, alCerrar, esperarInicio = false }) {
       {alCerrar && <button ref={cerrarRef} className="cv-cerrar" onClick={alCerrar} aria-label="Cerrar la presentación">✕</button>}
 
       <div className="cv-pantalla" aria-live="polite">
-        <div key={pantalla} className="cv-pantalla__contenido"><Pantalla id={pantalla} /></div>
+        <div key={pantalla} className="cv-pantalla__contenido"><Pantalla id={pantalla} datos={datos} /></div>
       </div>
 
       {ORDEN.map((k) => {

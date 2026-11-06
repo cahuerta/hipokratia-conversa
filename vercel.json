@@ -20,6 +20,16 @@
         }
       ],
       "destination": "/ica.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "planes.hipokratia.health"
+        }
+      ],
+      "destination": "/planes.html"
     }
   ]
 }
