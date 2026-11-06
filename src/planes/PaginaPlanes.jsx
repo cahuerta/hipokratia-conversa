@@ -49,7 +49,8 @@ export default function PaginaPlanes() {
             <span>Hypokrat<b>IA</b> Gestión</span>
           </a>
           <h1>Planes y precios</h1>
-          <p className="pl-sub">Ficha clínica, agenda, dictado con IA y el Portal para tus pacientes. Precios mensuales, <b>IVA incluido</b>.</p>
+          <p className="pl-sub">Ficha clínica, agenda, dictado con IA y el Portal para tus pacientes. Precios mensuales, <b>IVA incluido</b>.
+            {" "}Si trabajas solo, <a className="pl-sub-link" href="/inscribete">pruébalo un mes gratis, sin tarjeta</a>.</p>
           {guion && (
             <button className="pl-video" onClick={() => setVideo(true)}>
               <span aria-hidden="true">▶</span> Ver a los asistentes explicando los planes
@@ -78,7 +79,7 @@ export default function PaginaPlanes() {
                   <Check>Dictado con IA que ordena la atención</Check>
                   <Check>Portal y app para tus pacientes</Check>
                 </ul>
-                <a className="pl-boton pl-boton--suave" href={correo("Externo Base")}>Lo quiero</a>
+                <a className="pl-boton pl-boton--suave" href="/inscribete?plan=externo_base">Probar 1 mes gratis</a>
               </article>
 
               <article className="pl-plan pl-plan--destacado">
@@ -93,7 +94,7 @@ export default function PaginaPlanes() {
                   <Check>Tus direcciones de atención</Check>
                   <Check>Logo y nombre en tus documentos</Check>
                 </ul>
-                <a className="pl-boton" href={correo("Externo Completo")}>Lo quiero</a>
+                <a className="pl-boton" href="/inscribete?plan=externo_completo">Probar 1 mes gratis</a>
               </article>
 
               <article className="pl-plan">
@@ -156,7 +157,7 @@ export default function PaginaPlanes() {
       <footer className="pl-pie">
         <div className="pl-ancho">
           <span>Hypokrat<b>IA</b> · <a href="https://hipokratia.health">hipokratia.health</a> · <a href={`mailto:${CORREO}`}>{CORREO}</a></span>
-          <span>Precios mensuales en pesos chilenos, IVA incluido.</span>
+          <span>Precios mensuales en pesos chilenos, IVA incluido · <a href="/terminos">Términos del servicio</a></span>
         </div>
       </footer>
 

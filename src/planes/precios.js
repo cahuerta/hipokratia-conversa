@@ -2,7 +2,7 @@
 // Salen del backend de la Ficha (GET /api/planes/precios), que lee las mismas
 // tablas que se editan en Superadmin → Precios: si cambia un valor ahí, cambian
 // la página y lo que dicen los avatares. IVA incluido (servicio exento).
-const BACKEND = import.meta.env.VITE_FICHA_BACKEND || "https://services.icarticular.cl";
+export const BACKEND = import.meta.env.VITE_FICHA_BACKEND || "https://services.icarticular.cl";
 
 export async function cargarPrecios() {
   const ctrl = new AbortController();

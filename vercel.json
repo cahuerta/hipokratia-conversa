@@ -30,6 +30,16 @@
         }
       ],
       "destination": "/planes.html"
+    },
+    {
+      "source": "/:ruta(inscribete|terminos)",
+      "has": [
+        {
+          "type": "host",
+          "value": "planes.hipokratia.health"
+        }
+      ],
+      "destination": "/planes.html"
     }
   ]
 }
