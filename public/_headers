@@ -1,0 +1,3 @@
+# Cabeceras en Cloudflare Pages (antes en vercel.json)
+/*
+  Content-Security-Policy: frame-ancestors 'self' https://*.hipokratia.health https://hipokratia.health https://*.icarticular.cl https://icarticular.cl
