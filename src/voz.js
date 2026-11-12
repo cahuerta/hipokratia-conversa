@@ -11,7 +11,7 @@
  *   La boca sigue el volumen real del audio.
  * - RESPALDO: si el backend no responde, se habla con la voz del navegador.
  */
-const BACKEND = import.meta.env.VITE_ASISTENTES_BACKEND || "https://asistencia-ica-backend.onrender.com";
+const BACKEND = import.meta.env.VITE_ASISTENTES_BACKEND || "https://ipo-api.icarticular.cl";
 
 export const VOCES = {
   ica:    { voz: "ica",      tono: "normal", velocidad: "normal", genero: "f", pitch: 1.05 },
